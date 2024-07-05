@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Netflix India-Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @media only screen and (max-width: 640px) {
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            body {
+                background-color: black;
+                overflow-x: hidden;
+            }
+
+            .poster {
+                background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/ff5587c5-1052-47cf-974b-a97e3b4f0656/065df910-dec3-46ae-afa8-7ad2b52dce40/IN-en-20240506-popsignuptwoweeks-perspective_alpha_website_medium.jpg);
+                width: 100%;
+                height: 500px;
+                overflow-x: hidden;
+                background-size: cover;
+            }
+
+            /* Box  */
+            .box {
+                width: 100%;
+                height: 500px;
+                opacity: 0.75;
+                background-color: black;
+            }
+
+            .main img {
+                width: 120px;
+                height: 50px;
+                color: red;
+                margin: 15px 15px;
+                position: absolute;
+                z-index: 10;
+            }
+
+            /* content  */
+            .content {
+                margin-top: 130px;
+                overflow: hidden;
+                background-size: cover;
+                position: absolute;
+                z-index: 10;
+                /* border: 1px solid red; */
+                width: 100%;
+            }
+
+            .first {
+                font-size: 30px;
+                color: white;
+                font-weight: bolder;
+                text-align: center;
+            }
+
+            .second {
+                margin: 10px 0px 0px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            .third {
+                color: white;
+                font-size: 18px;
+                text-align: center;
+                padding: 15px 30px 30px;
+            }
+
+            /* input tag  */
+            .input {
+                margin-top: 350px;
+                margin-left: 0;
+                overflow: hidden;
+                background-size: cover;
+                position: absolute;
+                z-index: 10;
+                width: 100%;
+                height: 150px;
+                /* border: 1px solid red; */
+            }
+
+            input {
+                /* padding: 15px 16px 8px; */
+                width: 20rem;
+                height: 40px;
+                background-color: rgba(35, 35, 35, 0.5);
+                border-radius: 5px;
+                color: white;
+                padding-top: 5px;
+                margin-left: 30px;
+                margin-top: 5px;
+            }
+
+            input::placeholder {
+                color: white;
+                padding-left: 10px;
+                font-size: 15px;
+            }
+
+            button {
+                /* padding: 12px 16px 8px; */
+                width: 12rem;
+                height: 50px;
+                margin-left: 100px;
+                margin-top: 20px;
+                font-size: 1.2rem;
+                font-weight: bolder;
+                color: white;
+                background-color: red;
+                border-radius: 5px;
+                border: none;
+            }
+
+            /* SEPARATION */
+            .separation {
+                width: 100%;
+                height: 8px;
+                background-color: rgb(31, 28, 28);
+            }
+
+            /* MAIN-SECTION */
+            .container-1 {
+                width: 100%;
+                height: 500px;
+                /* border: 1px solid white; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow-x: hidden;
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            h1 {
+                color: white;
+                font-size: 35px;
+                font-weight: 900;
+            }
+
+            p {
+                color: white;
+                font-size: 16px;
+                margin-top: 10px;
+                align-items: center;
+            }
+
+            .secImg img {
+                width: 340px;
+                height: 220px;
+                margin-top: 25px;
+                position: relative;
+                z-index: 10;
+            }
+
+            .vid {
+                width: 300px;
+                height: 150px;
+                position: absolute;
+                top: 740px;
+                left: 50px;
+                right: 0;
+            }
+
+            /* SEPARATION */
+            .separation-2 {
+                width: 100%;
+                height: 10px;
+                background-color: rgb(31, 28, 28);
+                margin-top: 20px;
+            }
+
+            /* CONTAINER-2 */
+            .container-2 {
+                width: 100%;
+                height: 600px;
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                overflow-x: hidden;
+                /* border: 2px solid rebeccapurple; */
+            }
+
+            #image img {
+                width: 380px;
+                height: 400px;
+                margin: 0;
+            }
+
+            .heading {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-top: 80px;
+            }
+
+            .heading h1 {
+                color: white;
+                font-size: 35px;
+                font-weight: 900;
+            }
+
+            .heading p {
+                color: white;
+                font-size: 17px;
+                margin: 16px 0px 0px;
+            }
+
+            .separation-3 {
+                width: 100%;
+                height: 10px;
+                background-color: rgb(31, 28, 28);
+                margin-top: 70px;
+            }
+
+            /* CONTAINER-3 */
+            .container-3 {
+                width: 100%;
+                height: 500px;
+                /* border: 2px solid red; */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .computer-image img {
+                width: 350px;
+                height: 300px;
+                margin: 50px 80px;
+                position: relative;
+                z-index: 10;
+                /* border: 2px solid white; */
+            }
+
+            #cont3 {
+                width: 210px;
+                height: 340px;
+                top: 1820px;
+                right: 150px;
+                left: 100px;
+                position: absolute;
+            }
+
+            #item {
+                margin-top: 60px;
+            }
+
+            .separation-4 {
+                width: 100%;
+                height: 10px;
+                background-color: rgb(31, 28, 28);
+                margin-top: 70px;
+            }
+
+            /* CONTAINER-4  */
+            .container-4 {
+                width: 100%;
+                height: 650px;
+                /* border: 2px solid red; */
+                display: flex;
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+            }
+
+
+            /* CONTAINER-5  */
+            .container-5 {
+                width: 100%;
+                height: 650px;
+                border: 2px solid white;
+                overflow-x: hidden;
+            }
+
+            .faq h1 {
+                color: white;
+                font-size: 25px;
+                font-weight: 800;
+                display: flex;
+                justify-content: center;
+                padding: 25px;
+                /* border: 1px solid rebeccapurple; */
+            }
+
+            .question {
+                background-color: rgb(45, 45, 45);
+                padding: 20px;
+                max-width: 75%;
+                display: flex;
+                justify-content: space-between;
+                /* border: 1px solid red; */
+                margin: 10px 30px;
+            }
+
+            #qus {
+                font-size: 18px;
+                color: #fff;
+            }
+
+            #ans {
+                background-color: rgb(45, 45, 45);
+                max-width: 75%;
+                /* height: 200px; */
+                margin: 0px 30px;
+                padding: 20px;
+                display: none;
+            }
+
+
+            #ans p {
+                color: white;
+                font-size: 18px;
+            }
+
+            svg {
+                color: white;
+                width: 25px;
+                height: 25px;
+            }
+
+
+            /* CONTAINER-6  */
+            .container-6 {
+                width: 100%;
+                height: 150px;
+                /* border: 1px solid red; */
+            }
+
+            .container-6 p {
+                padding: 10px 20px;
+                font-size: 15px;
+            }
+
+            #input {
+                display: flex;
+                flex-direction: column;
+                margin-left: 30px;
+                /* justify-content: center;
+                align-items: center; */
+            }
+
+
+            /* FOOTER-SECTION  */
+            footer {
+                width: 100%;
+                height: 330px;
+                /* border: 2px solid white; */
+            }
+
+            footer p {
+                color: #FFFFFFB3;
+                font-size: 15px;
+                margin: 30px 30px;
+                margin-bottom: 0;
+                cursor: pointer;
+                /* border: 2px solid red; */
+            }
+
+            .footer-section {
+                /* display: flex; */
+                /* justify-content: space-evenly; */
+                /* border: 2px solid blue; */
+                width: 100%;
+                height: 200px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                margin-top: 15px;
+            }
+
+            li {
+                color: #FFFFFFB3;
+                font-size: 15px;
+                text-decoration: underline;
+                list-style-type: none;
+                margin: 10px 30px;
+                cursor: pointer;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="poster">
+            <div class="main">
+                <div class="image">
+                    <img src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+                        alt="">
+                </div>
+            </div>
+
+            <div class="content">
+                <p class="first">Unlimited movies, TV shows and more</p>
+                <p class="second">Watch anywhere. Cancel anytime.</p>
+                <div class="third">Ready to watch? Enter your email or mobile number to create or restart your
+                    membership.</div>
+            </div>
+
+            <div class="input">
+                <input type="text" placeholder="Email or mobile number">
+                <button>Get Started ></button>
+            </div>
+
+            <div class="box"></div>
+        </div>
+
+        <div class="separation"></div>
+    </header>
+
+    <main>
+        <!-- CONTAINER-1  -->
+        <div class="container-1">
+            <div class="item">
+                <h1>Enjoy on you Tv</h1>
+                <p>Watch on smart TVs, PlayStation, Xbox, <br> Chromecast, Apple TV, Blu-ray, players and more.</p>
+            </div>
+
+            <div class="secImg">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="">
+            </div>
+
+            <video class="vid" data-uia="nmhp-card-animation-asset-video" autoplay="" playsinline="" muted="" loop="">
+                <source
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-in-0819.m4v"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div class="separation-2"></div>
+
+        <!-- CONTAINER-2  -->
+        <div class="container-2">
+            <div id="image">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg"
+                    alt="">
+            </div>
+
+            <div class="heading">
+                <h1>Download your shows <br> to watch offline</h1>
+                <p>Save your favourites easily and always have <br> something to watch.</p>
+            </div>
+        </div>
+        <div class="separation-3"></div>
+
+        <!-- CONTAINER-3  -->
+        <div class="container-3">
+            <div class="item" id="item">
+                <h1>Watch everywhere</h1>
+                <p>Stream unlimited movies and TV shows on your <br> phone, tablet, laptop and TV.</p>
+            </div>
+
+            <div class="computer-image">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile-in.png"
+                    alt="">
+            </div>
+
+            <video id="cont3" data-uia="nmhp-card-animation-asset-video" autoplay="" playsinline="" muted="" loop="">
+                <source
+                    src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v"
+                    type="video/mp4">
+            </video>
+        </div>
+        <div class="separation-4"></div>
+
+        <!-- CONTAINER-4  -->
+        <div class="container-4">
+            <div id="image" class="childern">
+                <img src="https://occ-0-2042-3662.1.nflxso.net/dnm/api/v6/19OhWN2dO19C9txTON9tvTFtefw/AAAABVr8nYuAg0xDpXDv0VI9HUoH7r2aGp4TKRCsKNQrMwxzTtr-NlwOHeS8bCI2oeZddmu3nMYr3j9MjYhHyjBASb1FaOGYZNYvPBCL.png?r=54d"
+                    alt="">
+            </div>
+
+            <div class="heading">
+                <h1>Create profiels for kids</h1>
+                <p>Send childerns on adventures with their favourite <br> characters in space made just for them-free
+                    <br> with your membership.
+                </p>
+            </div>
+        </div>
+        <div class="separation-4"></div>
+
+        <!-- CONTAINER-5  -->
+        <div class="container-5" id="container-5">
+            <div class="faq">
+                <h1>Frequently Asked Questions</h1>
+
+                <!-- QUESTION NO 1  -->
+                <div class="question">
+                    <p id="qus">What is Netflix?</p>
+
+                    <svg class="wrong" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+                </div>
+
+                <div id="ans">
+                    <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies,
+                        anime, documentaries and more – on thousands of internet-connected devices.
+                        <br>
+                    <p class="second-para"> You can watch as much as you want, whenever you want, without a single ad –
+                        all for one low
+                        monthly price. There's always something new to discover, and new TV shows and movies are added
+                        every week! </p>
+                    </p>
+                </div>
+
+                <!-- QUESTION NO 2  -->
+                <div class="question" id="question-2">
+                    <p id="qus">How much does Netflix cost?</p>
+
+                    <svg class="wrong-2" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                </div>
+
+                <div id="ans" class="ans-2">
+                    <p>Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one
+                        fixed monthly fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+                </div>
+
+                <!-- QUESTION NO 3  -->
+                <div class="question" id="question-3">
+                    <p id="qus">Where can I watch?</p>
+
+                    <svg class="wrong-3" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                </div>
+
+                <div id="ans" class="ans-3">
+                    <p>Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at
+                        netflix.com from your personal computer or on any internet-connected device that offers the
+                        Netflix app, including smart TVs, smartphones, tablets, streaming media players and game
+                        consoles.
+                        <br>
+
+                    <p class="second-para">You can also download your favourite shows with the iOS, Android, or Windows
+                        10 app. Use downloads to watch while you're on the go and without an internet connection. Take
+                        Netflix with you anywhere.</p>
+                    </p>
+                </div>
+
+
+                <!-- QUESTION NO 4  -->
+                <div class="question" id="question-4">
+                    <p id="qus">How do I cancel?</p>
+
+                    <svg class="wrong-4" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                </div>
+
+                <div id="ans" class="ans-4">
+                    <p>Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel
+                        your account online in two clicks. There are no cancellation fees – start or stop your account
+                        anytime.</p>
+                </div>
+
+                <!-- QUESTION NO 5  -->
+                <div class="question" id="question-5">
+                    <p id="qus">What can I watch on Netflix?</p>
+
+                    <svg class="wrong-5" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                </div>
+
+                <div id="ans" class="ans-5">
+                    <p>Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning
+                        Netflix originals, and more. Watch as much as you want, anytime you want.</p>
+                </div>
+
+                <!-- QUESTION NO 6  -->
+                <div class="question" id="question-6">
+                    <p id="qus">Is Netflix good for Kids?</p>
+
+                    <svg class="wrong-6" xmlns="http://www.w3.org/2000/svg" fill="none" width="36" height="36"
+                        viewBox="0 0 36 36" role="img" data-icon="PlusLarge" aria-hidden="true"
+                        class="elj7tfr3 default-ltr-cache-1dpnjn e164gv2o4">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M17 17V3H19V17H33V19H19V33H17V19H3V17H17Z"
+                            fill="currentColor"></path>
+                    </svg>
+
+                </div>
+
+                <div id="ans" class="ans-6">
+                    <p>The Netflix Kids experience is included in your membership to give parents control while kids
+                        enjoy family-friendly TV shows and films in their own space.
+                        <br>
+
+                    <p class="second-para">Kids profiles come with PIN-protected parental controls that let you restrict
+                        the maturity rating of content kids can watch and block specific titles you don’t want kids to
+                        see.</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTAINER-6  -->
+        <div class="container-6">
+            <P>Ready to watch? Enter your email or mobile number to create or restart your membership.</P>
+
+            <div id="input">
+                <input type="text" placeholder="Email or mobile number">
+                <button>Get Started ></button>
+            </div>
+        </div>
+        <div class="separation-4"></div>
+
+
+        <footer>
+            <p>Questions? Call 000-800-919-1694</p>
+
+            <div class="footer-section">
+                <ol>
+                    <li>FAQ</li>
+                    <li>Investor Relations</li>
+                    <li>Privacy</li>
+                    <li>Speed Test</li>
+                </ol>
+
+                <ol>
+                    <li>Help Center</li>
+                    <li>Jobs</li>
+                    <li>cookie preferences</li>
+                    <li>Legal Notices</li>
+                </ol>
+
+
+                <ol>
+                    <li>Account</li>
+                    <li>Ways to Watch</li>
+                    <li>corporate information</li>
+                    <li>Only on Netflix</li>
+                </ol>
+
+
+                <ol>
+                    <li>Media Center</li>
+                    <li>Terms of Use</li>
+                    <li>Contact Us</li>
+                </ol>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+
+        // QUESTION NO 1
+        let quest = document.querySelector(".question");
+        let answe = document.getElementById("ans");
+
+        quest.addEventListener("click", () => {
+            if (answe.style.display != 'none') {
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe.style.display = 'block';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(45deg)";
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".wrong-4").style.transform = "rotate(0)";
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "250px";
+            }
+        });
+
+        // QUESTION NO 2
+        let quest2 = document.querySelector("#question-2");
+        let answe2 = document.querySelector(".ans-2");
+
+        quest2.addEventListener("click", () => {
+            if (answe2.style.display != 'none') {
+                answe2.style.display = 'none';
+                answe.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe2.style.display = 'block';
+                answe.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".wrong-2").style.transform = "rotate(45deg)";
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".wrong-4").style.transform = "rotate(0)";
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "120px";
+            }
+        });
+
+
+        // QUESTION NO 3
+        let quest3 = document.querySelector("#question-3");
+        let answe3 = document.querySelector(".ans-3");
+
+        quest3.addEventListener("click", () => {
+            if (answe3.style.display != 'none') {
+                answe3.style.display = 'none';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe3.style.display = 'block';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".wrong-3").style.transform = "rotate(45deg)";
+                document.querySelector(".wrong-4").style.transform = "rotate(0)"
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "300px";
+            }
+        });
+
+
+        // QUESTION NO 4
+        let quest4 = document.querySelector("#question-4");
+        let answe4 = document.querySelector(".ans-4");
+
+        quest4.addEventListener("click", () => {
+            if (answe4.style.display != 'none') {
+                answe4.style.display = 'none';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong-4").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe4.style.display = 'block';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe5.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".wrong-4").style.transform = "rotate(45deg)";
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "140px";
+            }
+        });
+
+        // QUESTION NO 5
+        let quest5 = document.querySelector("#question-5");
+        let answe5 = document.querySelector(".ans-5");
+
+        quest5.addEventListener("click", () => {
+            if (answe5.style.display != 'none') {
+                answe5.style.display = 'none';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe5.style.display = 'block';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe6.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".wrong-4").style.transform = "rotate(0)";
+                document.querySelector(".wrong-5").style.transform = "rotate(45deg)";
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "100px";
+            }
+        });
+
+        // QUESTION NO 6
+        let quest6 = document.querySelector("#question-6");
+        let answe6 = document.querySelector(".ans-6");
+
+        quest6.addEventListener("click", () => {
+            if (answe6.style.display != 'none') {
+                answe6.style.display = 'none';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                document.querySelector(".wrong-6").style.transform = "rotate(0)";
+                document.querySelector(".container-6").style.marginTop = "0";
+            } else {
+                answe6.style.display = 'block';
+                answe.style.display = 'none';
+                answe2.style.display = 'none';
+                answe3.style.display = 'none';
+                answe4.style.display = 'none';
+                answe5.style.display = 'none';
+                document.querySelector(".wrong").style.transform = "rotate(0)";
+                document.querySelector(".wrong-2").style.transform = "rotate(0)";
+                document.querySelector(".wrong-3").style.transform = "rotate(0)";
+                document.querySelector(".wrong-4").style.transform = "rotate(0)";
+                document.querySelector(".wrong-5").style.transform = "rotate(0)";
+                document.querySelector(".wrong-6").style.transform = "rotate(45deg)";
+                document.querySelector(".container-6").style.marginTop = "220px";
+            }
+        });
+    </script>
+
+</body>
+
+</html>
